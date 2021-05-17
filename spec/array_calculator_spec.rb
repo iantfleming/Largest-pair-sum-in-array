@@ -47,8 +47,14 @@ describe Array_calculator do
     expect(subject.sum_largest_nums([1, 3, 5, 7, 32, 11, 21])).to eq(53)
   end
 
-
-
-
   #edge cases
+  #testing negative numbers
+
+  it 'returns the sum of the highest 2 numbers in an array' do
+    expect(subject.sum_largest_nums([-1, -3, -5, -7, -32, -11, -21])).to eq(-4)
+  end
+
+
+
+
 end
