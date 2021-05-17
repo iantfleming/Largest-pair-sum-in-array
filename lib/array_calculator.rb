@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Array_calculator
-
   def sum_largest_nums(arr)
     remove_non_numerics(arr)
     if arr.length <= 2
@@ -17,8 +16,7 @@ class Array_calculator
     arr.sum
   end
 
-
-  def remove_elements(arr, amount=2)
+  def remove_elements(arr, amount = 2)
     num = arr.length - amount
     num.times do
       arr.shift
