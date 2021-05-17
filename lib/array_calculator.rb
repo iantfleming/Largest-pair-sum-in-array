@@ -26,6 +26,6 @@ class Array_calculator
   end
 
   def remove_non_numerics(arr)
-    arr.delete_if { |obj| !(obj.is_a? Integer) }
+    arr.delete_if { |obj| !(obj.is_a? Numeric) }
   end
 end

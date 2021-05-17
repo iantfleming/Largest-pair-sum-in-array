@@ -72,5 +72,11 @@ describe Array_calculator do
     expect(subject.sum_largest_nums([1, 3, 5, 7, 32, 11, 'd', 21, 'a', 'b'])).to eq(53)
   end
 
+  #testing floats
+
+  it 'returns the sum of the highest 2 numbers in an array even when they are floats' do
+    expect(subject.sum_largest_nums([1, 3, 5, 7, 32.3, 11, 21.6])).to eq(53.9)
+  end
+
 
 end
