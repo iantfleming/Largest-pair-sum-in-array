@@ -3,18 +3,20 @@
 class Array_calculator
 
   def sum_largest_nums(arr)
-    more_than_two(arr)
+    remove_non_numerics(arr)
+    if arr.length <= 2
+      arr.sum
+    else
+      more_than_two(arr)
+    end
   end
 
   def more_than_two(arr)
-    if arr.length > 2
-      arr.sort!
-      remove_elements(arr, 2)
-      arr.sum
-    else
-      arr.sum
-    end
+    arr.sort!
+    remove_elements(arr, 2)
+    arr.sum
   end
+
 
   def remove_elements(arr, amount=2)
     num = arr.length - amount
@@ -23,4 +25,7 @@ class Array_calculator
     end
   end
 
+  def remove_non_numerics(arr)
+    arr.delete_if { |obj| !(obj.is_a? Integer) }
+  end
 end

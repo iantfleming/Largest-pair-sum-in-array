@@ -23,6 +23,10 @@ describe Array_calculator do
     expect(subject).to respond_to(:remove_elements).with(2).argument
   end
 
+  it 'responds to the method remove_non_numerics' do
+    expect(subject).to respond_to(:remove_elements).with(1).argument
+  end
+
   it 'if the array contains no numbers, it returns zero' do
     expect(subject.sum_largest_nums([])).to eq(0)
   end
@@ -40,6 +44,14 @@ describe Array_calculator do
   end
 
   it 'returns the sum of the highest 2 numbers in an array' do
+    expect(subject.sum_largest_nums([3, 3, 3, 3])).to eq(6)
+  end
+
+  it 'returns the sum of the highest 2 numbers in an array' do
+    expect(subject.sum_largest_nums([3, 3, 3, 6])).to eq(9)
+  end
+
+  it 'returns the sum of the highest 2 numbers in an array' do
     expect(subject.sum_largest_nums([1, 3, 5, 7])).to eq(12)
   end
 
@@ -54,7 +66,11 @@ describe Array_calculator do
     expect(subject.sum_largest_nums([-1, -3, -5, -7, -32, -11, -21])).to eq(-4)
   end
 
+  #testing letters
 
+  it 'ignores all non-numeric values in the array' do
+    expect(subject.sum_largest_nums([1, 3, 5, 7, 32, 11, 'd', 21, 'a', 'b'])).to eq(53)
+  end
 
 
 end
